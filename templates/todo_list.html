@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Happy New Year</h2>
+<ol>
+    {% for todo in todos %}
+        <li>{{todo.title}} {{todo.created_at}}
+            <label>
+    <input type="checkbox" name="completed" {% if todo.completed %} checked {% endif %}>
+    Completed
+</label><a href="{% url 'update_todo' todo.id %}"><button>Update</button></a>
+<a href="{% url 'delete_todo' todo.id %}"><button>Delete</button></a>
+        </li>
+        {{todo.description}}
+    {% endfor %}
+</ol>
+
+<a href="{% url 'create_todo' %}"><button>Add Task</button></a>
+{% endblock %}

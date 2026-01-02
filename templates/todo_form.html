@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+{% block content %}
+<h1>Enter your Tasks here!</h1>
+<form method="post">
+    {% csrf_token %}  <!--for secure of data-->
+    <label>Title: </label>
+    <input type="text" value="{{todo.title | default:''}}" required name="title"><br><br>
+    <label>Description: </label>
+    <textarea name="description" required>{{ todo.description |default:""}}</textarea><br><br>
+    
+    <!-- <label>
+        <input type="checkbox" name="completed" {% if todo.completed %} checked {% endif %}>
+        Completed
+    </label><br><br> -->
+    
+    <button type="submit">Save</button>
+
+</form>
+
+{% endblock %}
