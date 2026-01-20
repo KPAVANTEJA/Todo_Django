@@ -1,18 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>Happy New Year</h2>
-<ol>
-    {% for todo in todos %}
-        <li>{{todo.title}} {{todo.created_at}}
-            <label>
-    <input type="checkbox" name="completed" {% if todo.completed %} checked {% endif %}>
-    Completed
-</label><a href="{% url 'update_todo' todo.id %}"><button>Update</button></a>
-<a href="{% url 'delete_todo' todo.id %}"><button>Delete</button></a>
-        </li>
-        {{todo.description}}
-    {% endfor %}
-</ol>
+<div>
+    <div>
+        <h1 class="page-title">Smart To‑Do Manager</h1>
+    </div>
 
-<a href="{% url 'create_todo' %}"><button>Add Task</button></a>
+    <div>
+        <a href="{% url 'create_todo' %}">
+            <button class="btn btn-create">Create</button>
+        </a>
+    </div>
+
+    {% for todo in todos %}
+    <div class="card">
+        <div class=" card-header">
+            <div class="todo-title">
+                {{todo.title}}
+            </div>
+            <div class="todo-actions">
+                <a href="{% url 'update_todo' todo.id %}" class="btn btn-update">Update</a>
+                <a href="{% url 'delete_todo' todo.id %}" class="btn btn-delete">Delete</a>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="todo-description">{{todo.description}}</div>
+            <div class="todo-date"><em>{{todo.created_at}}</em></div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}

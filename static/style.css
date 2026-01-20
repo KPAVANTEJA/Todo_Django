@@ -1,0 +1,208 @@
+body{
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, rgba(255,255,255,0.7) 50%, rgba(0,0,0,0.7) 50%);
+  margin: 0;
+  padding: 70px;
+}
+.page-title{
+  background-color: white;
+  border: 1px solid crimson;
+  box-shadow: 0 6px 15px rgba(0,0,0,.4);
+  overflow: hidden;
+  padding: 10px;
+  text-align: center;
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  font-size: 40px;
+  color: blue;
+  animation: slideDown 1s ease-out;
+}
+.page-title:hover {
+  color: crimson;
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+.btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-create {
+  background-color: rgb(46, 60, 246);
+  color: white;
+}
+.btn-create:hover {
+  background-color: crimson;
+  color : white;
+  transform: scale(1.05);
+}
+.btn-update {
+  background-color: #1de151;
+  color: black;
+  text-decoration: none;
+}
+.btn-update:hover {
+  background-color: rgb(46, 60, 246);
+  color: white;
+  transform: scale(1.05);
+}
+.btn-delete {
+  background-color: rgb(46, 60, 246);
+  color: white;
+  text-decoration: none;
+}
+.btn-delete:hover {
+  background-color: #1de151;
+  color: black;
+  transform: scale(1.05);
+}
+.card {
+  background: white;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: crimson ;
+  color: white;
+  animation: pulseHeader 3s infinite;
+}
+.todo-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+.card-body {
+  padding: 15px;
+  color: #555;
+  animation: fadeIn 1.2s ease;
+}
+.todo-description {
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+.todo-description:hover {
+  transform: translateX(5px);
+  color: #000;
+}
+.todo-date {
+  font-size: 14px;
+  color: #888;
+  transition: opacity 0.3s ease;
+}
+.todo-date:hover {
+  opacity: 0.7;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulseHeader {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+@keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+
+/*This is form page*/
+.task-form-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background: crimson;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgb(228, 13, 42);
+  animation: fadeInUp 1s ease;
+}
+.form-title {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 20px;
+  animation: slideDown 1s ease;
+}
+.form-title:hover {
+  color: rgb(46, 60, 246);
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+.form-group {
+  margin-bottom: 20px;
+  animation: fadeIn 1.2s ease;
+}
+.form-label {
+  display: block;
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  font-weight: 400;
+  font-size: 25px;
+  margin-bottom: 8px;
+  color: white;
+  transition: color 0.3s ease;
+}
+.form-label:hover {
+  color: blue;
+}
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.form-input:focus, .form-textarea:focus {
+  border-color: greenyellow;
+  box-shadow: 0 0 8px rgba(18, 36, 238, 0.6);
+  transform: scale(1.02);
+}
+.form-input:hover, .form-textarea:hover {
+  border-color: blue;
+}
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn-save {
+  background: linear-gradient(45deg, rgb(46, 60, 246), rgb(208, 8, 191));
+  color: white;
+  width: 100%;
+}
+.btn-save:hover {
+  background: linear-gradient(45deg, rgb(208, 8, 191), rgb(46, 60, 246));
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

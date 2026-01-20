@@ -1,20 +1,30 @@
 {% extends 'base.html'%}
 {% block content %}
-<h1>Enter your Tasks here!</h1>
-<form method="post">
-    {% csrf_token %}  <!--for secure of data-->
-    <label>Title: </label>
-    <input type="text" value="{{todo.title | default:''}}" required name="title"><br><br>
-    <label>Description: </label>
-    <textarea name="description" required>{{ todo.description |default:""}}</textarea><br><br>
-    
-    <!-- <label>
-        <input type="checkbox" name="completed" {% if todo.completed %} checked {% endif %}>
-        Completed
-    </label><br><br> -->
-    
-    <button type="submit">Save</button>
+<div class="task-form-container">
+    <h1 class="form-title">Create your Tasks here!</h1>
+    <form method="post" class="task-form">
+        {% csrf_token %}  <!--for secure of data-->
 
-</form>
+        <div class="form-group">
+            <label class="form-label">Title:</label>
+            <input type="text" value="{{todo.title | default:''}}" required name="title" class="form-input">
+        </div>
 
+        <div class="form-group">
+            <label class="form-label">Description:</label>
+            <textarea name="description" required class="form-textarea">{{ todo.description |default:""}}</textarea>
+        </div>
+
+        <!-- 
+        <div class="form-group">
+            <label class="form-label checkbox-label">
+                <input type="checkbox" name="completed" {% if todo.completed %} checked {% endif %}>
+                Completed
+            </label>
+        </div>
+        -->
+
+        <button type="submit" class="btn btn-save">Save</button>
+    </form>
+</div>
 {% endblock %}
